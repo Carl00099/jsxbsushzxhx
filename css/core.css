@@ -1,0 +1,117 @@
+/* --- CORE.CSS: Base Styles, Blue Theme, and Glassmorphism --- */
+
+:root {
+    --bg-color: #0d1a33; /* Deep Dark Blue */
+    --text-color: #00FFFF; /* Electric Cyan/Blue Neon */
+    --accent-color: #0099FF; /* Primary Blue Accent */
+    --border-color: #1a4d8c; /* Darker Blue Border */
+    --link-hover-color: #FFFFFF;
+    --glass-blur: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inconsolata', monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+    /* Basic subtle background animation */
+    background: linear-gradient(-45deg, #0a1428, #0d1a33, #0a1428, #10264d);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- THE MAIN GLASSY CONTAINER --- */
+.terminal-container {
+    width: 95%;
+    max-width: 1000px;
+    /* Glassmorphism Effect */
+    background: rgba(26, 77, 140, 0.2); /* Semi-transparent blue background */
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid rgba(0, 255, 255, 0.2); /* Light Cyan border */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 30px;
+    margin: 20px 0;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+}
+
+/* --- TEXT & NEON GLOW --- */
+.neon-glow {
+    text-shadow: 
+        0 0 5px var(--text-color), 
+        0 0 10px var(--accent-color), 
+        0 0 20px var(--text-color);
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.6em;
+    text-align: center;
+    margin: 30px 0 20px;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+/* --- LINKS AND BUTTONS BASE STYLE --- */
+.action-button, .channel-button, .back-link {
+    font-family: 'Inconsolata', monospace;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    color: var(--text-color);
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--text-color);
+    box-shadow: 0 0 8px var(--text-color);
+}
+
+.action-button:hover, .channel-button:hover, .back-link:hover {
+    color: var(--bg-color);
+    background: var(--text-color); /* Flash White/Cyan on hover */
+    box-shadow: 0 0 15px var(--text-color), 0 0 30px var(--accent-color);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.back-link {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
