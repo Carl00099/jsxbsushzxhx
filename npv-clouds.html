@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPV CLOUDS - ELONSK FILES</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal-container">
+        <header class="header-section">
+            <h1 class="glow-text">NPV CLOUDS - CONFIG LIST</h1>
+            <a href="index.html" class="back-link">&lt;-- BACK TO HOME</a>
+        </header>
+
+        <hr>
+
+        <main class="cloud-list-section">
+            <h2 class="section-title">AVAILABLE CLOUDS</h2>
+            
+            <div class="cloud-table-container glow-border">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CLOUD NAME</th>
+                            <th>STATUS / REGION</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cloud-name">NPV-CLOUD-001</td>
+                            <td>Active / Asia</td>
+                            <td>
+                                <button class="copy-button action-button" 
+                                        data-config="npvcloud_asia_config_string_001_">
+                                    COPY CONFIG 📋
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cloud-name">NPV-CLOUD-002</td>
+                            <td>Active / Europe</td>
+                            <td>
+                                <button class="copy-button action-button" 
+                                        data-config="npvcloud_europe_config_string_002_">
+                                    COPY CONFIG 📋
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cloud-name">NPV-CLOUD-003</td>
+                            <td class="unavailable-status">Maintenance</td>
+                            <td>
+                                <button class="action-button unavailable-button" disabled>
+                                    UNAVAILABLE
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="copy-status" class="status-message">Ready to copy.</p>
+            
+            <a href="https://wa.me/yourwhatsapplink" target="_blank" class="channel-button whatsapp-button margin-top">
+                <img src="images/whatsapp-icon.png" alt="WhatsApp Icon" class="channel-icon">
+                JOIN WHATSAPP CHANNEL FOR SUPPORT
+            </a>
+        </main>
+
+        <footer class="footer-section">
+            <p>&gt; OWNER ELONSK 2026 ZIM/IRAN</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
