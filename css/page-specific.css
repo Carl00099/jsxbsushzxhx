@@ -2,14 +2,7 @@
 
 /* --- HOME PAGE: 3D Animated Grid/Cubes --- */
 .home-container {
-    perspective: 1000px; /* Enable 3D space */
-}
-.category-block {
-    position: relative;
-    overflow: hidden;
-    transform: rotateX(0deg); /* Start at neutral 3D position */
-    transition: transform 0.5s ease;
-    padding: 30px 10px;
+    perspective: 1000px;
 }
 /* 3D Hover Effect */
 .category-block:hover {
@@ -17,10 +10,10 @@
     box-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
 }
 
+
 /* --- SOCKSIP PAGE: Neon Grid Background --- */
 .socksip-page-bg {
     background: radial-gradient(circle at center, #102e5c 0%, #0d1a33 60%);
-    /* Replace with a repeating animated grid SVG/PNG for a better effect */
     background-image: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(0, 255, 255, 0.1) 11px);
     animation: pulseGlow 5s infinite alternate;
 }
@@ -28,10 +21,9 @@
     from { background-size: 100%; }
     to { background-size: 105%; }
 }
-.socksip-visual {
-    width: 80px; height: 80px; background-color: var(--text-color);
-    box-shadow: 0 0 15px var(--text-color);
-    animation: rotate3d 10s linear infinite; /* Simple 3D rotation */
+.socksip-card .file-image {
+    /* Simple 3D rotation for the image/icon */
+    animation: rotate3d 10s linear infinite; 
 }
 @keyframes rotate3d {
     from { transform: rotateY(0deg) rotateX(0deg); }
@@ -40,8 +32,6 @@
 
 
 /* --- HA TUNNEL PAGE: Digital Rain/Matrix Style --- */
-/* The main body element should have a background video or complex JS canvas animation for true "Digital Rain" */
-/* For CSS only, we will use a color shift */
 .ha-tunnel-page-bg {
     background-color: #050e1f;
     transition: background-color 10s ease-in-out infinite alternate;
@@ -50,6 +40,7 @@
     /* Highly transparent, minimal border */
     background: rgba(0, 255, 255, 0.05);
     border: 1px dashed rgba(0, 255, 255, 0.2);
+    /* Subtle skew animation */
     animation: subtleShift 4s infinite alternate;
 }
 @keyframes subtleShift {
@@ -64,13 +55,6 @@
     background-image: radial-gradient(circle at top right, rgba(0, 255, 255, 0.1) 0%, transparent 40%);
 }
 
-.cloud-table-container {
-    background: rgba(26, 77, 140, 0.1);
-    backdrop-filter: blur(15px); /* Stronger glass effect */
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    padding: 15px;
-    border-radius: 10px;
-}
 /* Individual Row Hover (3D Tilt) */
 .cloud-row {
     transition: all 0.3s ease;
@@ -82,14 +66,12 @@
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
-.status-active { color: #00FF00; } /* Green for Active */
-.status-maintenance-text { color: #FF0000; } /* Red for Maintenance */
-
-/* Special "Copy" button animation on click (requires JS class addition) */
+/* Special "Copy" button animation on success */
 .copy-button {
     overflow: hidden;
     position: relative;
 }
+/* This pseudo-element handles the "COPIED!" flash without needing a separate JS class */
 .copy-button:active::before {
     content: "COPIED!";
     position: absolute;
@@ -100,16 +82,11 @@
     justify-content: center;
     align-items: center;
     animation: flashCopy 0.3s ease-in;
+    z-index: 20;
 }
 
 @keyframes flashCopy {
     0% { opacity: 0; }
     50% { opacity: 1; }
     100% { opacity: 0; }
-}
-
-/* Footer & Other elements */
-.footer-section {
-    padding-top: 15px;
-    border-top: 1px solid var(--border-color);
 }
