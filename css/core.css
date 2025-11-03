@@ -24,7 +24,6 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding: 40px 0;
-    /* Basic subtle background animation */
     background: linear-gradient(-45deg, #0a1428, #0d1a33, #0a1428, #10264d);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
@@ -36,15 +35,13 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* --- THE MAIN GLASSY CONTAINER --- */
 .terminal-container {
     width: 95%;
     max-width: 1000px;
-    /* Glassmorphism Effect */
-    background: rgba(26, 77, 140, 0.2); /* Semi-transparent blue background */
+    background: rgba(26, 77, 140, 0.2);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid rgba(0, 255, 255, 0.2); /* Light Cyan border */
+    border: 1px solid rgba(0, 255, 255, 0.2);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     padding: 30px;
     margin: 20px 0;
@@ -85,6 +82,13 @@ h1 {
     padding-bottom: 5px;
 }
 
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0;
+}
+
 /* --- LINKS AND BUTTONS BASE STYLE --- */
 .action-button, .channel-button, .back-link {
     font-family: 'Inconsolata', monospace;
@@ -103,7 +107,7 @@ h1 {
 
 .action-button:hover, .channel-button:hover, .back-link:hover {
     color: var(--bg-color);
-    background: var(--text-color); /* Flash White/Cyan on hover */
+    background: var(--text-color);
     box-shadow: 0 0 15px var(--text-color), 0 0 30px var(--accent-color);
     transform: translateY(-2px) scale(1.02);
 }
@@ -114,4 +118,162 @@ h1 {
     margin: 10px auto;
     padding: 8px 15px;
     font-size: 0.9em;
+}
+
+/* --- Navigation Grid (Home) --- */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.category-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+    min-height: 150px;
+    overflow: hidden; /* Important for 3D effect */
+    transform-style: preserve-3d;
+}
+
+.category-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.category-name {
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* --- Download/File Cards --- */
+.file-download-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.file-card {
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.file-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px var(--text-color));
+}
+
+.file-description {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #90FF90;
+}
+
+.file-metadata {
+    font-size: 0.9em;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+/* --- Table Styles (NPV CLOUDS) --- */
+.cloud-table-container {
+    overflow-x: auto;
+    padding: 10px;
+    margin: 20px auto;
+    background: rgba(26, 77, 140, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.status-active { color: #00FF00; }
+.status-maintenance-text { color: #FF0000; }
+
+.copy-button {
+    width: 150px;
+    padding: 10px;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.unavailable-button {
+    background-color: #555555;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.unavailable-button:hover {
+    background-color: #555555;
+    box-shadow: none;
+    transform: none;
+}
+
+.status-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+    height: 20px;
+}
+
+.footer-section {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: var(--accent-color);
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    .terminal-container {
+        padding: 10px;
+    }
+    .action-button, .channel-button {
+        width: 100%;
+    }
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+    .copy-button {
+        width: 100%;
+    }
 }
