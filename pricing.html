@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Grok | Pricing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --grok-cyan: #00f2ff; --grok-dark: #000; }
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; background: #000; color: #fff; font-family: 'Inter', sans-serif; width: 100%; overflow-x: hidden; }
+        .container { width: 95%; max-width: 450px; margin: 0 auto; padding: 20px; }
+        .back-nav { color: #fff; text-decoration: none; font-size: 0.8em; opacity: 0.6; display: inline-block; margin-bottom: 20px; }
+        
+        .price-card {
+            background: rgba(15, 15, 15, 0.9); border: 1px solid #333; border-radius: 15px;
+            padding: 25px; margin-bottom: 15px; position: relative; overflow: hidden;
+        }
+        .price-card.gold { border-color: #ffd700; background: rgba(255, 215, 0, 0.02); }
+        .tier-name { font-size: 0.7em; font-weight: 900; letter-spacing: 2px; opacity: 0.5; }
+        .amt { font-size: 2.2em; font-weight: 900; color: var(--grok-cyan); margin: 5px 0; }
+        .gold .amt { color: #ffd700; }
+
+        .chat-links { display: flex; gap: 20px; margin-top: 20px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; align-items: center; }
+        .chat-links span { font-size: 0.7em; font-weight: bold; }
+        .chat-links a { font-size: 26px; text-decoration: none; transition: 0.3s; }
+        
+        /* Brand Colors */
+        .fa-facebook-messenger { color: #0084FF; }
+        .fa-instagram { color: #E4405F; }
+        .fa-whatsapp { color: #25D366; }
+        
+        .payment-info { text-align: center; margin-top: 40px; border-top: 1px solid #222; padding-top: 20px; }
+        .p-methods { font-weight: bold; font-size: 0.9em; color: var(--grok-cyan); margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-nav">← BACK TO HOME</a>
+        <h2 style="text-align: center; margin-bottom: 30px;">PREMIUM ACCESS</h2>
+
+        <div class="price-card">
+            <i class="fas fa-gift" style="position: absolute; top: 15px; right: 15px; opacity: 0.3;"></i>
+            <div class="tier-name">BRONZE PASS (1 WEEK)</div>
+            <div class="amt">$1</div>
+            <p style="font-size: 0.8em; opacity: 0.6;">7 Days Full High Speed</p>
+            <div class="chat-links">
+                <span><i class="fas fa-comment-dots"></i> CHAT TO BUY:</span>
+                <a href="https://m.me/61577785121216"><i class="fab fa-facebook-messenger"></i></a>
+                <a href="https://wa.me/qr/CGGG2OUG3UNYD1"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61577785121216"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+
+        <div class="price-card gold">
+            <i class="fas fa-crown" style="position: absolute; top: 15px; right: 15px; color: #ffd700;"></i>
+            <div class="tier-name" style="color:#ffd700; opacity: 1;">GOLD ACCESS (1 MONTH)</div>
+            <div class="amt">$3</div>
+            <p style="font-size: 0.8em; opacity: 0.6;">30 Days Unlimited Connect</p>
+            <div class="chat-links">
+                <span><i class="fas fa-comment-dots"></i> CHAT TO BUY:</span>
+                <a href="https://m.me/61577785121216"><i class="fab fa-facebook-messenger"></i></a>
+                <a href="https://wa.me/qr/CGGG2OUG3UNYD1"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61577785121216"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+
+        <div class="payment-info">
+            <p style="font-size: 0.7em; opacity: 0.5;">MA PAYMENT ANOCHASHWA</p>
+            <div class="p-methods">INNBUCKS • ECOCASH • MUKURU</div>
+        </div>
+    </div>
+</body>
+</html>
