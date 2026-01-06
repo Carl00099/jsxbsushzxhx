@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HA TUNNEL FILES LINK DOWNLOAD</title>
+    <title>HA TUNNEL FILES | ELONSK</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -21,7 +21,6 @@
             min-height: 100vh; overflow-x: hidden;
         }
 
-        /* Background "X" Logo */
         body::before {
             content: "X";
             position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -40,7 +39,6 @@
             backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px; margin: 20px; text-align: center; max-width: 400px;
             box-shadow: 0 0 50px rgba(0, 242, 255, 0.05);
-            position: relative;
         }
 
         .server-status {
@@ -51,157 +49,96 @@
             margin-bottom: 20px; text-transform: uppercase;
         }
 
-        .ping-dot {
-            width: 6px; height: 6px; background: var(--grok-cyan); border-radius: 50%;
-            position: relative;
-        }
-
-        .ping-dot::after {
-            content: ''; position: absolute; left: 0; width: 6px; height: 6px;
-            background: var(--grok-cyan); border-radius: 50%; animation: ping 1.5s infinite;
-        }
-
+        .ping-dot { width: 6px; height: 6px; background: var(--grok-cyan); border-radius: 50%; position: relative; }
+        .ping-dot::after { content: ''; position: absolute; left: 0; width: 6px; height: 6px; background: var(--grok-cyan); border-radius: 50%; animation: ping 1.5s infinite; }
         @keyframes ping { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(4); opacity: 0; } }
 
-        /* Share & Download Section */
-        .progress-container { margin: 20px 0; }
-        
-        .progress-bar-bg {
-            width: 100%; height: 8px; background: rgba(255,255,255,0.1);
-            border-radius: 10px; margin-bottom: 10px; overflow: hidden;
-        }
-
-        #progress-fill {
-            width: 0%; height: 100%; background: var(--grok-cyan);
-            transition: 0.5s ease; box-shadow: 0 0 10px var(--grok-cyan);
-        }
+        .progress-bar-bg { width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 15px; overflow: hidden; }
+        #progress-fill { width: 0%; height: 100%; background: var(--grok-cyan); transition: 0.5s ease; }
 
         .share-btn {
-            background: var(--wa-green); color: white; padding: 16px;
-            border-radius: 10px; text-decoration: none; display: block;
-            font-weight: 800; margin-bottom: 15px; transition: 0.3s;
-            border: none; cursor: pointer; width: 100%; font-size: 14px;
+            background: var(--wa-green); color: white; padding: 16px; border-radius: 10px;
+            text-decoration: none; display: block; font-weight: 800; border: none; cursor: pointer; width: 100%; margin-bottom: 10px;
         }
 
         .download-btn {
             background: #333; color: #777; padding: 18px; border-radius: 10px;
-            text-decoration: none; font-weight: 700; display: block;
-            transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
-            pointer-events: none; /* Locked by default */
+            text-decoration: none; font-weight: 700; display: block; pointer-events: none; transition: 0.3s;
         }
 
-        .download-btn.unlocked {
-            background: #fff; color: #000; pointer-events: auto;
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        .download-btn.unlocked { background: #fff; color: #000; pointer-events: auto; }
+
+        .npv-link-btn {
+            background: transparent; color: #ff9900; border: 1px solid #ff9900;
+            padding: 12px; border-radius: 10px; display: block; text-decoration: none;
+            margin-top: 20px; font-weight: bold; font-size: 0.9em;
         }
 
-        /* Floating "Order Files" Button (Bottom Left) */
         .order-float {
             position: fixed; bottom: 30px; left: 20px; background: var(--grok-blue);
             color: #fff; padding: 15px 25px; border-radius: 12px; font-weight: bold;
-            text-decoration: none; z-index: 1000; border: 1px solid rgba(255,255,255,0.2);
-            animation: bounce 3s infinite; display: flex; align-items: center; gap: 10px;
+            text-decoration: none; z-index: 1000; animation: bounce 3s infinite;
+            display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
-        }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
 
-        /* WhatsApp/Social Float (Bottom Right) */
         .wa-float {
             position: fixed; bottom: 30px; right: 20px; background: #fff;
             width: 60px; height: 60px; border-radius: 12px; z-index: 1000;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px; color: #000; text-decoration: none;
+            display: flex; align-items: center; justify-content: center; font-size: 24px; color: #000; text-decoration: none;
         }
     </style>
 </head>
 <body>
 
     <div class="grok-header">
-        <h1 style="font-size: 1.1em; letter-spacing: 4px; opacity: 0.8; line-height: 1.5;">
-            HA TUNNEL FILES🇿🇼<br><span style="color: var(--grok-cyan)">CONNECTAI TEAM RANGU</span>
-        </h1>
+        <h1>ALL VPNS FILES 🇿🇼</h1>
     </div>
 
     <div class="glass-card">
-        <div class="server-status">
-            <div class="ping-dot"></div>
-            SERVER HOST ONLINE 
-        </div>
-        <h2 style="margin: 10px 0;">ELONSK FILES ZIM🇿🇼</h2>
-        <p style="opacity: 0.5; font-size: 0.8em; margin-bottom: 20px;">v4.0.2 Stable | HA Tunnel Pro</p>
+        <div class="server-status"><div class="ping-dot"></div> SERVER ONLINE</div>
+        <h2>ELONSK HAT ZW🇿🇼</h2>
         
-        <p id="instruction-text" style="font-size: 0.9em; color: var(--grok-cyan); margin-bottom: 10px;">
-            Share to 5 WhatsApp groups to unlock
-        </p>
-
-        <div class="progress-container">
-            <div class="progress-bar-bg">
-                <div id="progress-fill"></div>
-            </div>
-            
-            <button onclick="handleShare()" class="share-btn">
-                <i class="fab fa-whatsapp"></i> TO UNLOCK FILE ⤵️(<span id="count">0</span>/5)
-            </button>
-
-            <a href="files/NEW 1 ELONSK 🇿🇼 ZW🔥.hat" id="download-btn" class="download-btn">
-                <i class="fas fa-lock"></i> DOWNLOAD .HAT
-            </a>
-        </div>
+        <p id="instruction-text" style="color: var(--grok-cyan); font-size: 0.9em;">Share to 5 groups to unlock</p>
+        <div class="progress-bar-bg"><div id="progress-fill"></div></div>
         
-        <p style="font-size: 0.75em; opacity: 0.6;">Sharing to groups helps us keep the servers running!</p>
+        <button onclick="handleShare()" class="share-btn">
+            <i class="fab fa-whatsapp"></i> SHARE TO UNLOCK (<span id="count">0</span>/5)
+        </button>
+
+        <a href="files/NEW 1 ELONSK 🇿🇼 ZW🔥.hat" id="download-btn" class="download-btn">
+            <i class="fas fa-lock"></i> DOWNLOAD .HAT
+        </a>
+
+        <a href="npv-files.html" class="npv-link-btn">
+            <i class="fas fa-bolt"></i> GO TO NPV FILES
+        </a>
     </div>
 
-    <a href="pricing.html" class="order-float">
-        <i class="fas fa-shopping-cart"></i> Order Files
-    </a>
-
-    <a href="https://www.facebook.com/profile.php?id=61577785121216" class="wa-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="pricing.html" class="order-float"><i class="fas fa-shopping-cart"></i> Order Files</a>
+    <a href="https://wa.me/YOUR_NUMBER" class="wa-float"><i class="fab fa-whatsapp"></i></a>
 
     <script>
         let shareCount = 0;
-        const totalRequired = 5;
-        const channelLink = "https://whatsapp.com/channel/0029Vb6sgldI7BeEelGjRm0R";
-        const shareMessage = encodeURIComponent("Pinda mu-Channel muwane ma-Files eHA Tunnel emahara! 🇿🇼🔥 Ane speed dzeipapo: " + channelLink);
+        const total = 5;
+        const msg = encodeURIComponent("Wana ma-Files eHA Tunnel emahara umo! 🇿🇼🔥: https://whatsapp.com/channel/0029Vb6sgldI7BeEelGjRm0R");
 
         function handleShare() {
-            // Open WhatsApp share window
-            window.open(`https://wa.me/?text=${shareMessage}`, '_blank');
-
-            // Simulating a delay for the user returning to the page
+            window.open(`https://wa.me/?text=${msg}`, '_blank');
             setTimeout(() => {
-                if (shareCount < totalRequired) {
+                if (shareCount < total) {
                     shareCount++;
-                    updateProgress();
+                    document.getElementById('progress-fill').style.width = (shareCount/total)*100 + "%";
+                    document.getElementById('count').innerText = shareCount;
+                    if (shareCount >= total) {
+                        document.getElementById('instruction-text').innerText = "UNLOCKED! ✅";
+                        document.getElementById('download-btn').classList.add('unlocked');
+                        document.getElementById('download-btn').innerHTML = "DOWNLOAD NOW";
+                    }
                 }
             }, 2000);
         }
-
-        function updateProgress() {
-            const fill = document.getElementById('progress-fill');
-            const countDisplay = document.getElementById('count');
-            const btn = document.getElementById('download-btn');
-            const text = document.getElementById('instruction-text');
-
-            let percentage = (shareCount / totalRequired) * 100;
-            fill.style.width = percentage + "%";
-            countDisplay.innerText = shareCount;
-
-            if (shareCount >= totalRequired) {
-                text.innerText = "DONE! File is now Unlocked ✅";
-                text.style.color = "#25D366";
-                btn.classList.add('unlocked');
-                btn.innerHTML = '<i class="fas fa-download"></i> DOWNLOAD .HAT';
-            } else {
-                text.innerText = "Share to " + (totalRequired - shareCount) + " more groups to unlock!";
-            }
-        }
     </script>
-
 </body>
 </html>
