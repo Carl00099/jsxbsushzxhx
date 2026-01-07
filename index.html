@@ -3,142 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HA TUNNEL FILES | NPV FILES </title>
+    <title>Site Maintenance | Zim Files 2026 Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --grok-cyan: #00f2ff;
-            --grok-blue: #0066ff;
-            --grok-dark: #000000;
-            --grok-card: rgba(10, 10, 10, 0.8);
-            --wa-green: #25D366;
+            --led-green: #00ff88;
+            --led-blue: #00d9ff;
+            --led-gold: #ffcc00;
+            --bg-dark: #0a0b0d;
         }
 
         body {
-            margin: 0; padding: 0; background: var(--grok-dark); color: #fff;
-            font-family: 'Inter', -apple-system, sans-serif;
-            display: flex; flex-direction: column; align-items: center;
-            min-height: 100vh; overflow-x: hidden;
+            margin: 0; padding: 20px; background: var(--bg-dark);
+            color: white; font-family: 'Inter', sans-serif;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 100vh; text-align: center;
         }
 
-        body::before {
-            content: "X";
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            font-size: 80vw; font-weight: 900; color: rgba(255, 255, 255, 0.03);
-            z-index: -1; font-family: 'Arial Black', sans-serif;
+        /* LED Glow Header */
+        .maintenance-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid var(--led-blue);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+            padding: 40px 20px; border-radius: 20px; max-width: 400px;
+            animation: pulse-blue 2s infinite;
         }
 
-        .grok-header {
-            width: 100%; padding: 20px; text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 30px;
+        @keyframes pulse-blue {
+            0% { border-color: var(--led-blue); box-shadow: 0 0 10px rgba(0, 217, 255, 0.2); }
+            50% { border-color: #fff; box-shadow: 0 0 30px rgba(0, 217, 255, 0.5); }
+            100% { border-color: var(--led-blue); box-shadow: 0 0 10px rgba(0, 217, 255, 0.2); }
         }
 
-        .glass-card {
-            background: var(--grok-card); border-radius: 20px;
-            backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px; margin: 20px; text-align: center; max-width: 400px;
-            box-shadow: 0 0 50px rgba(0, 242, 255, 0.05);
+        .icon-main { font-size: 60px; color: var(--led-gold); margin-bottom: 20px; text-shadow: 0 0 15px var(--led-gold); }
+
+        h1 { font-size: 1.8rem; margin: 10px 0; letter-spacing: 2px; }
+        p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+
+        /* Social Link Buttons */
+        .channel-list { width: 100%; margin-top: 30px; }
+        
+        .channel-btn {
+            display: flex; align-items: center; gap: 15px;
+            background: #16181d; border: 1px solid #333;
+            padding: 15px; border-radius: 12px; margin-bottom: 12px;
+            text-decoration: none; color: white; font-weight: bold;
+            transition: 0.3s;
         }
 
-        .server-status {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: rgba(0, 242, 255, 0.1); border: 1px solid var(--grok-cyan);
-            padding: 6px 18px; border-radius: 4px; font-size: 0.7em;
-            font-weight: 900; letter-spacing: 2px; color: var(--grok-cyan);
-            margin-bottom: 20px; text-transform: uppercase;
-        }
+        .channel-btn:hover { border-color: var(--led-green); transform: scale(1.02); }
 
-        .ping-dot { width: 6px; height: 6px; background: var(--grok-cyan); border-radius: 50%; position: relative; }
-        .ping-dot::after { content: ''; position: absolute; left: 0; width: 6px; height: 6px; background: var(--grok-cyan); border-radius: 50%; animation: ping 1.5s infinite; }
-        @keyframes ping { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(4); opacity: 0; } }
+        .led-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--led-green); box-shadow: 0 0 10px var(--led-green); }
 
-        .progress-bar-bg { width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 15px; overflow: hidden; }
-        #progress-fill { width: 0%; height: 100%; background: var(--grok-cyan); transition: 0.5s ease; }
-
-        .share-btn {
-            background: var(--wa-green); color: white; padding: 16px; border-radius: 10px;
-            text-decoration: none; display: block; font-weight: 800; border: none; cursor: pointer; width: 100%; margin-bottom: 10px;
-        }
-
-        .download-btn {
-            background: #333; color: #777; padding: 18px; border-radius: 10px;
-            text-decoration: none; font-weight: 700; display: block; pointer-events: none; transition: 0.3s;
-        }
-
-        .download-btn.unlocked { background: #fff; color: #000; pointer-events: auto; }
-
-        .npv-link-btn {
-            background: transparent; color: #ff9900; border: 1px solid #ff9900;
-            padding: 12px; border-radius: 10px; display: block; text-decoration: none;
-            margin-top: 20px; font-weight: bold; font-size: 0.9em;
-        }
-
-        .order-float {
-            position: fixed; bottom: 30px; left: 20px; background: var(--grok-blue);
-            color: #fff; padding: 15px 25px; border-radius: 12px; font-weight: bold;
-            text-decoration: none; z-index: 1000; animation: bounce 3s infinite;
-            display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
-
-        .wa-float {
-            position: fixed; bottom: 30px; right: 20px; background: #fff;
-            width: 60px; height: 60px; border-radius: 12px; z-index: 1000;
-            display: flex; align-items: center; justify-content: center; font-size: 24px; color: #000; text-decoration: none;
-        }
+        .wa-icon { font-size: 24px; color: #25D366; }
     </style>
 </head>
 <body>
 
-    <div class="grok-header">
-        <h1>ALL VPNS FILES 🇿🇼</h1>
+    <div class="maintenance-box">
+        <div class="icon-main"><i class="fas fa-tools"></i></div>
+        <h1>SITE UNDER MAINTENANCE </h1>
+        <p>We are upgrading it  <b>Zim Files 2026 Hub</b> . We will be back LIVE soon! @7:00</p>
+        
+        <div class="channel-list">
+            <p style="font-size: 0.8rem; color: var(--led-gold); text-transform: uppercase; font-weight: 900;">Stay Connected:</p>
+            
+            <a href="https://whatsapp.com/channel/0029VbBVpuzHltY7Yk3GZU0o" class="channel-btn">
+                <i class="fab fa-whatsapp wa-icon"></i>
+                <div style="text-align: left; flex-grow: 1;">
+                    <div style="font-size: 0.9rem;">FILES OG HA TUNNEL</div>
+                    <div style="font-size: 0.7rem; color: #777;">Main Updates</div>
+                </div>
+                <div class="led-dot"></div>
+            </a>
+
+            <a href="https://whatsapp.com/channel/0029Vb6sgldI7BeEelGjRm0R" class="channel-btn">
+                <i class="fab fa-whatsapp wa-icon"></i>
+                <div style="text-align: left; flex-grow: 1;">
+                    <div style="font-size: 0.9rem;">VPN NEWS ZIM🇿🇼</div>
+                    <div style="font-size: 0.7rem; color: #777;">Daily News</div>
+                </div>
+                <div class="led-dot"></div>
+            </a>
+
+            <a href="https://whatsapp.com/channel/0029Vb79i4p0VycGbVI6QN0T" class="channel-btn">
+                <i class="fab fa-whatsapp wa-icon"></i>
+                <div style="text-align: left; flex-grow: 1;">
+                    <div style="font-size: 0.9rem;">Shona Jokes 📡 Zim</div>
+                    <div style="font-size: 0.7rem; color: #777;">laughter home</div>
+                </div>
+                <div class="led-dot"></div>
+            </a>
+
+            <a href="https://whatsapp.com/channel/0029Vb72S8t6GcG9z9CHoS27" class="channel-btn">
+                <i class="fab fa-whatsapp wa-icon"></i>
+                <div style="text-align: left; flex-grow: 1;">
+                    <div style="font-size: 0.9rem;">Zim Songs Hub</div>
+                    <div style="font-size: 0.7rem; color: #777;">Zim Best Songs</div>
+                </div>
+                <div class="led-dot"></div>
+            </a>
+        </div>
     </div>
 
-    <div class="glass-card">
-        <div class="server-status"><div class="ping-dot"></div> SERVER ONLINE</div>
-        <h2>ELONSK HAT ZW🇿🇼</h2>
-        
-        <p id="instruction-text" style="color: var(--grok-cyan); font-size: 0.9em;">Share to 5 groups to unlock</p>
-        <div class="progress-bar-bg"><div id="progress-fill"></div></div>
-        
-        <button onclick="handleShare()" class="share-btn">
-            <i class="fab fa-whatsapp"></i> SHARE TO UNLOCK (<span id="count">0</span>/5)
-        </button>
+    <p style="margin-top: 30px; color: #444; font-size: 0.7rem; font-weight: bold;">ZIM FILES 2026 HUB | ELONSK ZW</p>
 
-        <a href="files/🔥THE LEGENDARY FILE 11GB🔥.hat" id="download-btn" class="download-btn">
-            <i class="fas fa-lock"></i> DOWNLOAD .HAT
-        </a>
-
-        <a href="npv-files.html" class="npv-link-btn">
-            <i class="fas fa-bolt"></i> GO TO NPV FILES
-        </a>
-    </div>
-
-    <a href="pricing.html" class="order-float"><i class="fas fa-shopping-cart"></i> Order Files</a>
-    <a href="https://whatsapp.com/channel/0029VbBVpuzHltY7Yk3GZU0o" class="wa-float"><i class="fab fa-whatsapp"></i></a>
-
-    <script>
-        let shareCount = 0;
-        const total = 5;
-        const msg = encodeURIComponent("Umo munowana ma files e Ha Tunnel free! 🇿🇼🔥 https://whatsapp.com/channel/0029VbBVpuzHltY7Yk3GZU0o");
-
-        function handleShare() {
-            window.open(`https://wa.me/?text=${msg}`, '_blank');
-            setTimeout(() => {
-                if (shareCount < total) {
-                    shareCount++;
-                    document.getElementById('progress-fill').style.width = (shareCount/total)*100 + "%";
-                    document.getElementById('count').innerText = shareCount;
-                    if (shareCount >= total) {
-                        document.getElementById('instruction-text').innerText = "UNLOCKED! ✅";
-                        document.getElementById('download-btn').classList.add('unlocked');
-                        document.getElementById('download-btn').innerHTML = "DOWNLOAD NOW";
-                    }
-                }
-            }, 2000);
-        }
-    </script>
 </body>
 </html>
