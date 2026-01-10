@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HA TUNNEL FILES📡 | NPV FILES🇿🇼 </title>
+    <title>HA TUNNEL FILES📡 | SOCKS IP | NPV FILES🇿🇼 </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -12,6 +12,7 @@
             --grok-dark: #000000;
             --grok-card: rgba(10, 10, 10, 0.8);
             --wa-green: #25D366;
+            --socks-purple: #a855f7; /* Color for SOCKS button */
         }
 
         body {
@@ -68,10 +69,17 @@
 
         .download-btn.unlocked { background: #fff; color: #000; pointer-events: auto; }
 
+        /* Button Styles */
         .npv-link-btn {
             background: transparent; color: #ff9900; border: 1px solid #ff9900;
             padding: 12px; border-radius: 10px; display: block; text-decoration: none;
             margin-top: 20px; font-weight: bold; font-size: 0.9em;
+        }
+
+        .socks-link-btn {
+            background: transparent; color: var(--socks-purple); border: 1px solid var(--socks-purple);
+            padding: 12px; border-radius: 10px; display: block; text-decoration: none;
+            margin-top: 10px; font-weight: bold; font-size: 0.9em;
         }
 
         .order-float {
@@ -113,6 +121,10 @@
 
         <a href="npv-files.html" class="npv-link-btn">
             <i class="fas fa-bolt"></i> GO TO NPV FILES
+        </a>
+
+        <a href="socks-files.html" class="socks-link-btn">
+            <i class="fas fa-network-wired"></i> GO TO SOCKS IP FILES
         </a>
     </div>
 
