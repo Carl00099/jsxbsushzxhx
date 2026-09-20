@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header class="site-header">
 <div class="logo">ELONSK — Home of Files</div>
 <nav>
@@ -18,8 +19,10 @@
 <a href="contact.html">Contact</a>
 </nav>
 </header>
+
 <main class="page">
 <h1>NPV Clouds</h1>
+
 <div class="list">
 <div class="list-row">
 <span>NPV-Cloud-File-001.zip</span>
@@ -29,6 +32,43 @@
 </div>
 </div>
 </main>
+
 <footer>© 2026 ELONSK — Home of Files</footer>
+
+<!-- FLOATING FILE PASS PHRASE BUTTON -->
+<button class="floating-pass-btn" onclick="copyPassPhrase()" title="Copy File Pass Phrase">
+🔑
+</button>
+
+<script>
+function copyPassPhrase() {
+    const passPhrase = "7AW9-XDVW-NRP5-8VMV-41JT-GE2G-9R";
+    navigator.clipboard.writeText(passPhrase);
+}
+</script>
+
+<style>
+.floating-pass-btn {
+    position: fixed;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: #111;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+}
+
+.floating-pass-btn:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+</style>
+
 </body>
 </html>
