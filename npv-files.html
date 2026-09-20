@@ -54,7 +54,7 @@
             margin: 20px; 
             text-align: center; 
             max-width: 380px; 
-            backdrop-filter: blur(15px); /* Blurred card background */
+            backdrop-filter: blur(15px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
@@ -123,10 +123,58 @@
             color: #555;
             letter-spacing: 2px;
         }
+
+        /* Floating Copy Code - Added */
+        .floating-code {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9999;
+            background: rgba(0, 242, 255, 0.12);
+            color: var(--socks-cyan);
+            border: 1px solid var(--socks-cyan);
+            padding: 12px 10px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 18px rgba(0, 242, 255, 0.25);
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 0.72rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: 0.2s;
+        }
+
+        .floating-code:hover {
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
+            transform: translateY(-50%) scale(1.04);
+        }
+
+        .floating-code i {
+            font-size: 1.1rem;
+        }
+
+        /* Mobile adjustment for floating code */
+        @media (max-width: 500px) {
+            .floating-code {
+                left: 6px;
+                padding: 10px 7px;
+                font-size: 0.65rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="bg-blur"></div>
+
+    <!-- Floating Copy Code - Added -->
+    <button class="floating-code" onclick="copyFilePass()" aria-label="Copy file pass phrase">
+        <i class="fas fa-copy"></i>
+        <span id="copy-text">COPY<br>PASS</span>
+    </button>
 
     <div class="time-notice">
         <i class="fas fa-clock"></i> NEW UNLIMITED MABVIRI E FILE 🔥🔥🫂
@@ -181,6 +229,34 @@
                 }
             }, 2000);
         }
+
+        /* Copy File Pass Phrase - Added */
+        function copyFilePass() {
+            const passPhrase = "7AW9-XDVW-NRP5-8VMV-41JT-GE2G-9R";
+
+            navigator.clipboard.writeText(passPhrase).then(() => {
+                const copyText = document.getElementById("copy-text");
+                copyText.innerHTML = "COPIED<br>✓";
+
+                setTimeout(() => {
+                    copyText.innerHTML = "COPY<br>PASS";
+                }, 2000);
+            }).catch(() => {
+                const temp = document.createElement("textarea");
+                temp.value = passPhrase;
+                document.body.appendChild(temp);
+                temp.select();
+                document.execCommand("copy");
+                document.body.removeChild(temp);
+
+                const copyText = document.getElementById("copy-text");
+                copyText.innerHTML = "COPIED<br>✓";
+
+                setTimeout(() => {
+                    copyText.innerHTML = "COPY<br>PASS";
+                }, 2000);
+            });
+        }
     </script>
 </body>
-</html>
+                                       </html>
